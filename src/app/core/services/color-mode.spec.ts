@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { ColorModeService } from './color-mode';
 
-import { ColorMode } from './color-mode';
-
-describe('ColorMode', () => {
-  let service: ColorMode;
+describe('ColorModeService', () => {
+  let service: ColorModeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ColorMode);
+    service = TestBed.inject(ColorModeService);
   });
 
   it('should be created', () => {
