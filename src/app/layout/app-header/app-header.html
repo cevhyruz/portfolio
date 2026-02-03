@@ -13,7 +13,7 @@
 
     <button [cNavbarToggler]="collapseRef" class="border-0"></button>
     <div #collapseRef="cCollapse" cCollapse navbar style="z-index: 5000 !important;">
-      <c-navbar-nav class="mx-auto mb-0 mb-lg-0 gap-1" style="z-index: 6000 !important;">
+      <c-navbar-nav class="mx-auto mb-0 mb-lg-0 gap-1">
         <a cNavLink routerLink="/home" routerLinkActive="active">Home</a>
         <a cNavLink routerLink="/about" routerLinkActive="active">About</a>
         <a cNavLink routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
@@ -26,10 +26,32 @@
 
 
       <c-nav-item class="d-flex align-items-center me-1">
-        <ng-container *ngTemplateOutlet="themeDropdown" />
+        <c-dropdown alignment="end" variant="nav-item">
+          <button [caret]="true" cDropdownToggle aria-label="Open theme picker">
+            <svg cIcon [name]="icons()" size="lg"></svg>
+          </button>
+          <div cDropdownMenu class="ps-1 pt-1 pe-1 pb-0 w-50">
+            @for (mode of colorModes; track mode.name) {
+              <button
+                (click)="colorMode.set(mode.name)"
+                [active]="colorMode()===mode.name"
+                cDropdownItem
+                class="d-flex align-items-center rounded-1 mb-1"
+              >
+                <svg cIcon class="me-2" [name]="mode.icon" size="md"></svg>
+                @if (mode.icon === icons()) {
+                {{ mode.text }}
+                <svg cIcon class="ms-auto" name="cilCheckAlt" size="md"></svg>
+                } @else {
+                   {{ mode.text }}
+                }
+              </button>
+            }
+          </div>
+        </c-dropdown>
       </c-nav-item>
 
-      <button cButton color="dark" variant="outline" class="text-nowrap">
+      <button cButton color="primary" variant="outline" class="">
         Download My CV
       </button>
 
@@ -48,29 +70,4 @@
 </ng-container>
 
 
-<ng-template #themeDropdown>
-  <c-dropdown alignment="end" variant="nav-item">
-    <button [caret]="true" cDropdownToggle aria-label="Open theme picker">
-      <svg cIcon [name]="icons()" size="lg"></svg>
-    </button>
-    <div cDropdownMenu class="ps-1 pt-1 pe-1 pb-0 w-50">
-      @for (mode of colorModes; track mode.name) {
-        <button
-          (click)="colorMode.set(mode.name)"
-          [active]="colorMode()===mode.name"
-          cDropdownItem
-          class="d-flex align-items-center rounded-1 mb-1"
-        >
-          <svg cIcon class="me-2" [name]="mode.icon" size="md"></svg>
-          @if (mode.icon === icons()) {
-          {{ mode.text }}
-          <svg cIcon class="ms-auto" name="cilCheckAlt" size="md"></svg>
-          } @else {
-             {{ mode.text }}
-          }
-        </button>
-      }
-    </div>
-  </c-dropdown>
-</ng-template>
 

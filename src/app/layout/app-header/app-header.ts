@@ -1,5 +1,5 @@
 import { Component, input, inject, signal, computed } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {
   ColorModeService,
@@ -29,7 +29,7 @@ import { IconDirective } from '@coreui/icons-angular';
   selector: 'app-header',
   imports: [
     CommonModule,
-    RouterLink,
+    RouterLink, RouterModule,
     IconDirective,
     ButtonDirective,
     ContainerComponent,

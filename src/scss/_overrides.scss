@@ -1,9 +1,6 @@
-
-// Import styles with default layout.
-@use "@coreui/coreui/scss/coreui" as * with (
-  $enable-deprecation-messages: false,
+@use "@coreui/coreui/scss/variables" as * with (
   $primary: black,
-  $link-color: red,
+  $nav-link-color: red,
   $font-family-sans-serif: (
     Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
   )

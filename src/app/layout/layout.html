@@ -3,7 +3,9 @@
               position="sticky"
               class="px-0 py-0 header header-sticky"/>
   <div class="body flex-grow-1">
-    <router-outlet />
+    <c-container breakpoint="lg" class="h-auto px-4">
+      <router-outlet />
+    </c-container>
   </div>
   <app-footer />
 </div>
