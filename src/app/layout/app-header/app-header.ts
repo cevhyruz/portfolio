@@ -2,7 +2,6 @@ import { Component, input, inject, signal, computed } from '@angular/core';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {
-  ColorModeService,
   ContainerComponent,
   CollapseDirective,
   ButtonDirective,
@@ -24,6 +23,7 @@ import {
   NavLinkDirective,
 } from '@coreui/angular';
 import { IconDirective } from '@coreui/icons-angular';
+import { ColorModeService } from '../../core/services/color-mode';
 
 @Component({
   selector: 'app-header',

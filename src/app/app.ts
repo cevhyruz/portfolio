@@ -3,7 +3,7 @@ import { RouterOutlet, ActivatedRoute } from '@angular/router';
 import { delay, filter, map, tap } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
-import { ColorModeService } from '@coreui/angular';
+import { ColorModeService } from './core/services/color-mode';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from './core/icon-subset';
 
