@@ -1,1 +1,76 @@
-<p>app-header works!</p>
+<!-- <c-header position="sticky" class="px-0 py-0 border-0"> -->
+<ng-container>
+
+<c-navbar class="w-100" colorScheme="light" expand="md">
+  <!-- <c-container breakpoint="xxl" class="px-auto px-lg-5 px-xxl-2"> -->
+  <c-container breakpoint="lg">
+    <a cNavbarBrand routerLink="/home">
+      <span class="brand-first">JohnFred</span>
+      <span class="brand-last">Fadrigalan</span>
+      <!-- <img src="assets/brand.png" class="img-fluid" width="40"/> -->
+      <!-- <span>Noteriously</span> -->
+    </a>
+
+    <button [cNavbarToggler]="collapseRef" class="border-0"></button>
+    <div #collapseRef="cCollapse" cCollapse navbar style="z-index: 5000 !important;">
+      <c-navbar-nav class="mx-auto mb-0 mb-lg-0 gap-1" style="z-index: 6000 !important;">
+        <a cNavLink routerLink="/home" routerLinkActive="active">Home</a>
+        <a cNavLink routerLink="/about" routerLinkActive="active">About</a>
+        <a cNavLink routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+        <a cNavLink routerLink="/blog" routerLinkActive="active">Blog</a>
+        <a cNavLink routerLink="/contact" routerLinkActive="active">Contact</a>
+      </c-navbar-nav>
+    </div>
+
+    <c-header-nav class="d-none d-md-flex">
+
+
+      <c-nav-item class="d-flex align-items-center me-1">
+        <ng-container *ngTemplateOutlet="themeDropdown" />
+      </c-nav-item>
+
+      <button cButton color="dark" variant="outline" class="text-nowrap">
+        Download My CV
+      </button>
+
+
+      <!-- <c-nav-item class="d-flex align-items-center"> -->
+      <!--   <a cNavLink class="d-flex me-2"> -->
+      <!--     <svg cIcon name="cibGithub" size="lg"></svg> -->
+      <!--   </a> -->
+      <!-- </c-nav-item> -->
+
+
+    </c-header-nav>
+
+  </c-container>
+</c-navbar>
+</ng-container>
+
+
+<ng-template #themeDropdown>
+  <c-dropdown alignment="end" variant="nav-item">
+    <button [caret]="true" cDropdownToggle aria-label="Open theme picker">
+      <svg cIcon [name]="icons()" size="lg"></svg>
+    </button>
+    <div cDropdownMenu class="ps-1 pt-1 pe-1 pb-0 w-50">
+      @for (mode of colorModes; track mode.name) {
+        <button
+          (click)="colorMode.set(mode.name)"
+          [active]="colorMode()===mode.name"
+          cDropdownItem
+          class="d-flex align-items-center rounded-1 mb-1"
+        >
+          <svg cIcon class="me-2" [name]="mode.icon" size="md"></svg>
+          @if (mode.icon === icons()) {
+          {{ mode.text }}
+          <svg cIcon class="ms-auto" name="cilCheckAlt" size="md"></svg>
+          } @else {
+             {{ mode.text }}
+          }
+        </button>
+      }
+    </div>
+  </c-dropdown>
+</ng-template>
+

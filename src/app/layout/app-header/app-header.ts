@@ -1,11 +1,78 @@
-import { Component } from '@angular/core';
+import { Component, input, inject, signal, computed } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {
+  ColorModeService,
+  ContainerComponent,
+  CollapseDirective,
+  ButtonDirective,
+  DropdownComponent,
+  DropdownDividerDirective,
+  DropdownItemDirective,
+  DropdownMenuDirective,
+  DropdownToggleDirective,
+  HeaderBrandComponent,
+  HeaderComponent,
+  HeaderDividerComponent,
+  HeaderNavComponent,
+  HeaderTextComponent,
+  NavbarBrandDirective,
+  NavbarComponent,
+  NavbarNavComponent,
+  NavbarTogglerDirective,
+  NavItemComponent,
+  NavLinkDirective,
+} from '@coreui/angular';
+import { IconDirective } from '@coreui/icons-angular';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [
+    CommonModule,
+    RouterLink,
+    IconDirective,
+    ButtonDirective,
+    ContainerComponent,
+    CollapseDirective,
+    DropdownComponent,
+    DropdownDividerDirective,
+    DropdownItemDirective,
+    DropdownMenuDirective,
+    DropdownToggleDirective,
+    HeaderBrandComponent,
+    HeaderComponent,
+    HeaderDividerComponent,
+    HeaderNavComponent,
+    HeaderTextComponent,
+    NavbarBrandDirective,
+    NavbarComponent,
+    NavbarNavComponent,
+    NavbarTogglerDirective,
+    NavItemComponent,
+    NavLinkDirective,
+  ],
   templateUrl: './app-header.html',
   styleUrl: './app-header.scss',
 })
-export class AppHeader {
+export class AppHeader extends HeaderComponent {
 
+  isDark = signal(false);
+
+  readonly #colorModeService = inject(ColorModeService);
+  readonly colorMode = this.#colorModeService.colorMode;
+
+  readonly colorModes = [
+    { name: 'light', text: 'Light', icon: 'cilSun' },
+    { name: 'dark', text: 'Dark', icon: 'cilMoon' },
+    { name: 'auto', text: 'Auto', icon: 'cilContrast' }
+  ];
+
+  readonly icons = computed(() => {
+    const currentMode = this.colorMode();
+    return this.colorModes.find(mode => mode.name === currentMode)?.icon ?? 'cilSun';
+  });
+
+  constructor() {
+    super();
+  }
 }
