@@ -1,5 +1,11 @@
-name: deploy website
-on: [pull_request]
+name: deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
