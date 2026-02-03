@@ -1,5 +1,8 @@
 # Portfolio
+[![Test](https://github.com/cevhyruz/portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/cevhyruz/portfolio/actions/workflows/main.yml)
+
 🚀 Personal developer portfolio showcasing my projects, skills, and experiments in web development, system design, and modern JavaScript frameworks.
+
 
 ## Development
 
