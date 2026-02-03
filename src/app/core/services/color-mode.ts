@@ -1,7 +1,7 @@
 import { Injectable, inject, effect, afterNextRender, DestroyRef, DOCUMENT, signal, WritableSignal } from '@angular/core';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
 import { tap } from 'rxjs/operators';
-import { LocalStorage } from './local-storage';
+import { LocalStorageService } from './local-storage';
 
 export type ColorMode = 'light' | 'dark' | 'auto' | string | undefined;
 
@@ -11,7 +11,7 @@ export type ColorMode = 'light' | 'dark' | 'auto' | string | undefined;
 export class ColorModeService {
   readonly #destroyRef: DestroyRef = inject(DestroyRef);
   readonly #document: Document = inject(DOCUMENT);
-  readonly #localStorage: LocalStorage = inject(LocalStorage);
+  readonly #localStorage = inject(LocalStorageService);
 
   readonly eventName = signal('ColorSchemeChange');
   readonly localStorageItemName: WritableSignal<string | undefined> = signal(undefined);

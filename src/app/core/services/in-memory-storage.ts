@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryStorage implements Storage {
+export class InMemoryStorageService implements Storage {
   #storage = new Map<string, string>();
 
   public setItem(key: string, data: any): void {
