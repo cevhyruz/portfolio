@@ -2,6 +2,8 @@
 [![Test](https://github.com/cevhyruz/portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/cevhyruz/portfolio/actions/workflows/main.yml) 
 [![Vercel Preview Deployment](https://github.com/cevhyruz/portfolio/actions/workflows/deploy-preview.yml/badge.svg)](https://github.com/cevhyruz/portfolio/actions/workflows/deploy-preview.yml)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-white.svg)](https://opensource.org/licenses/MIT)
+
 🚀 Personal developer portfolio showcasing my projects, skills, and experiments in web development, system design, and modern JavaScript frameworks.
 
 
