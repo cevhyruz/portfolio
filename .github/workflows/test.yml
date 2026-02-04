@@ -1,13 +1,7 @@
-name: CI/CD Pipeline
-
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+name: Tests
 
 on:
   push:
-    branches:
-      - master
     branches-ignore:
       - master
   pull_request:
@@ -44,15 +38,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
+      #
+      # - name: Use Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 22
+      #     cache: 'npm'
+      #
+      # - name: Install dependencies
+      #   run: npm install
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
