@@ -1,6 +1,6 @@
 # Portfolio
-[![Test](https://github.com/cevhyruz/portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/cevhyruz/portfolio/actions/workflows/main.yml) 
-[![Vercel Preview Deployment](https://github.com/cevhyruz/portfolio/actions/workflows/deploy-preview.yml/badge.svg)](https://github.com/cevhyruz/portfolio/actions/workflows/deploy-preview.yml)
+[![Tests](https://github.com/cevhyruz/portfolio/actions/workflows/test.yml/badge.svg)](https://github.com/cevhyruz/portfolio/actions/workflows/test.yml)
+[![Production](https://github.com/cevhyruz/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/cevhyruz/portfolio/actions/workflows/deploy.yml)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-white.svg)](https://opensource.org/licenses/MIT)
 
