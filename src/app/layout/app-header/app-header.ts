@@ -1,5 +1,5 @@
 import { Component, input, inject, signal, computed } from '@angular/core';
-import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {
   ContainerComponent,
