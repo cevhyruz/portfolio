@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - run: |
-         ng build --prod
+         npm build --prod
       - uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
