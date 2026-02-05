@@ -1,0 +1,14 @@
+@use "sass:meta";
+@use "variables" as *;
+
+:root, [data-theme="light"] {
+
+  // Body
+  --body-font-family: #{meta.inspect($font-family-sans-serif)};
+  /* --body-font-size: */
+  /* --body-font-weight: */
+  /* --body-line-height: */
+  /* --body-text-align: */
+  /* --body-color: */
+  /* --body-bg: */
+}
